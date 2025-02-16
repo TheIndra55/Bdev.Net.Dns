@@ -2,11 +2,16 @@ using System.Text;
 
 namespace Bdev.Net.Dns.Records
 {
+    /// <summary>
+    ///     An TXT Resource Record (RR) (RFC1035 3.3.14)
+    /// </summary>
     public class TXTRecord : RecordBase
     {
-        public string Value { get; set; }
-
-        public int Length { get; set; }
+        /// <summary>
+        ///     Constructs an TXT record by reading bytes from a return message
+        /// </summary>
+        /// <param name="pointer">A logical pointer to the bytes holding the record</param>
+        /// <param name="recordLength">The length of the record in bytes</param>
         internal TXTRecord(Pointer pointer, int recordLength)
         {
             var position = pointer.Position;
@@ -29,20 +34,15 @@ namespace Bdev.Net.Dns.Records
             Length = sb.Length;
         }
 
-        public override string ToString()
-        {
-            return $"{Value}";
-        }
-    }
+        /// <summary>
+        ///     Gets the text value
+        /// </summary>
+        public string Value { get; }
 
-    public class CNameRecord : RecordBase
-    {
-        public string Value { get; set; }
-
-        internal CNameRecord(Pointer pointer)
-        {
-            Value = pointer.ReadDomain();
-        }
+        /// <summary>
+        ///     Gets the text length
+        /// </summary>
+        public int Length { get; }
 
         public override string ToString()
         {
