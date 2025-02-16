@@ -37,20 +37,20 @@ namespace Bdev.Net.Dns
             // and create the appropriate RDATA record based on the dnsType
             switch (Type)
             {
-                case DnsType.NS:
-                    Record = new NSRecord(pointer);
-                    break;
-                case DnsType.MX:
-                    Record = new MXRecord(pointer);
-                    break;
                 case DnsType.ANAME:
                     Record = new ANameRecord(pointer);
+                    break;
+                case DnsType.NS:
+                    Record = new NSRecord(pointer);
                     break;
                 case DnsType.CNAME:
                     Record = new CNameRecord(pointer);
                     break;
                 case DnsType.SOA:
                     Record = new SoaRecord(pointer);
+                    break;
+                case DnsType.MX:
+                    Record = new MXRecord(pointer);
                     break;
                 case DnsType.TXT:
                     Record = new TXTRecord(pointer, recordLength);

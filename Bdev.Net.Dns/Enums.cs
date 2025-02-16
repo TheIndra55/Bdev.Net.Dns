@@ -33,6 +33,10 @@ namespace Bdev.Net.Dns
         MX = 15, //mail exchange
         TXT = 16, //text strings
         AAAA = 28, //ipv6 host address
+        SRV = 33, //service selection
+        NSEC = 47, //next secure
+        DNSKEY = 48, //public key
+        NSEC3 = 50, //hashed next secure
     }
 
     /// <summary>
