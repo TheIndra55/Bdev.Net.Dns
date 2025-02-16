@@ -41,7 +41,6 @@ namespace Bdev.Net.Dns.Records
             return $"Mail Server = {DomainName}, Preference = {Preference}";
         }
 
-
         #region IComparable Members
 
         /// <inheritdoc />

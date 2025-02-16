@@ -19,7 +19,7 @@ namespace Bdev.Net.Dns.Records
         }
 
         /// <summary>
-        /// Gets the IPv6 address of the record
+        ///     Gets the IPv6 address of the record
         /// </summary>
         public IPAddress IPAddress { get; }
 

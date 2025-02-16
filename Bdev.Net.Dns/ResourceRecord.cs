@@ -58,6 +58,9 @@ namespace Bdev.Net.Dns
                 case DnsType.AAAA:
                     Record = new AaaaRecord(pointer);
                     break;
+                case DnsType.SRV:
+                    Record = new SrvRecord(pointer);
+                    break;
                 default:
                 {
                     // move the pointer over this unrecognized record
