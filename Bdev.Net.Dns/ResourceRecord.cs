@@ -55,6 +55,9 @@ namespace Bdev.Net.Dns
                 case DnsType.TXT:
                     Record = new TXTRecord(pointer, recordLength);
                     break;
+                case DnsType.AAAA:
+                    Record = new AaaaRecord(pointer);
+                    break;
                 default:
                 {
                     // move the pointer over this unrecognized record
