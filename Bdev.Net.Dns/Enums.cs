@@ -31,7 +31,14 @@ namespace Bdev.Net.Dns
         HINFO = 13, //host information
         MINFO = 14, //mailbox or mail list information
         MX = 15, //mail exchange
-        TXT = 16 //text strings
+        TXT = 16, //text strings
+        AAAA = 28, //ipv6 host address
+        SRV = 33, //service selection
+        DS = 43, //delegation signer
+        RRSIG = 46, //resource record signature
+        NSEC = 47, //next secure
+        DNSKEY = 48, //public key
+        NSEC3 = 50, //hashed next secure
     }
 
     /// <summary>

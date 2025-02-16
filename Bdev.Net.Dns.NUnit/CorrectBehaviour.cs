@@ -142,6 +142,24 @@ namespace Bdev.Net.Dns.NUnit
         }
 
         [Test]
+        public void CorrectAAAAForCloudflare()
+        {
+            var result = DnsServers.Resolve<AaaaRecord>("one.one.one.one").ToList();
+
+            Assert.AreEqual(IPAddress.Parse("2606:4700:4700::1111"), result[0].IPAddress);
+            Assert.AreEqual(IPAddress.Parse("2606:4700:4700::1001"), result[1].IPAddress);
+        }
+
+        [Test]
+        public void CorrectSRVForDebian()
+        {
+            var result = DnsServers.Resolve<SrvRecord>("_http._tcp.ftp.debian.org").First();
+
+            Assert.AreEqual(80, result.Port);
+            Assert.AreEqual("debian.map.fastlydns.net", result.Target);
+        }
+
+        [Test]
         [ExpectedException(typeof(NoResponseException))]
         public void NoResponseForBadDnsAddress()
         {
