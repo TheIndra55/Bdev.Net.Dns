@@ -151,6 +151,15 @@ namespace Bdev.Net.Dns.NUnit
         }
 
         [Test]
+        public void CorrectSRVForDebian()
+        {
+            var result = DnsServers.Resolve<SrvRecord>("_http._tcp.ftp.debian.org").First();
+
+            Assert.AreEqual(80, result.Port);
+            Assert.AreEqual("debian.map.fastlydns.net", result.Target);
+        }
+
+        [Test]
         [ExpectedException(typeof(NoResponseException))]
         public void NoResponseForBadDnsAddress()
         {

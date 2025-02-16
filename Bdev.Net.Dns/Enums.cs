@@ -34,6 +34,8 @@ namespace Bdev.Net.Dns
         TXT = 16, //text strings
         AAAA = 28, //ipv6 host address
         SRV = 33, //service selection
+        DS = 43, //delegation signer
+        RRSIG = 46, //resource record signature
         NSEC = 47, //next secure
         DNSKEY = 48, //public key
         NSEC3 = 50, //hashed next secure
